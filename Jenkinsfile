@@ -1,11 +1,13 @@
-pipeline {
-  agent any
-  stages {
-    stage('test') {
-      steps {
-        echo 'test'
-      }
-    }
-
-  }
+pipeline{
+	agent {
+		dockerfile true
+	}
+	stages {
+		stage('Build') {
+			steps {
+				sh 'node --version'
+				sh 'pwd'
+			}
+		}
+	}
 }
